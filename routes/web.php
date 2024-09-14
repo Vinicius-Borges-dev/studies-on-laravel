@@ -24,3 +24,8 @@ Route::match(['delete','post'],'/match', function(){
 Route::get('/produto/{id}/{categoria?}',function($id, $categoria = ''){
     return "O id do produto é: {$id}<br>E a categoria é: {$categoria}";
 });
+
+
+Route::get('/sobre', function(){
+    return redirect('/empresa');
+});
