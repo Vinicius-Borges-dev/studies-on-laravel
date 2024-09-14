@@ -21,6 +21,6 @@ Route::match(['delete','post'],'/match', function(){
 });
 
 
-Route::get('/produto/{id}',function($id){
-    return "O id do produto é: {$id}";
+Route::get('/produto/{id}/{categoria}',function($id, $categoria){
+    return "O id do produto é: {$id}<br>E a categoria é: {$categoria}";
 });
