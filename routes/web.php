@@ -3,19 +3,23 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('admin.clientes');
 });
 
-Route::name('admin.')->group(function () {
-    Route::get('admin/dashboard', function () {
+Route::group([
+    'prefix'=> 'admin',
+    'as' => 'admin.'
+], function(){
+
+    Route::get('dashboard', function () {
         return 'dashboard';
     })->name('dashboard');
 
-    Route::get('admin/users', function () {
+    Route::get('users', function () {
         return 'user';
     })->name('users');
 
-    Route::get('admin/clientes', function () {
+    Route::get('clientes', function () {
         return 'clientes';
     })->name('clientes');
 });
