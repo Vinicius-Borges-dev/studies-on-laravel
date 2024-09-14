@@ -19,3 +19,8 @@ Route::any('/any', function(){
 Route::match(['delete','post'],'/match', function(){
     return 'Permite apenas acessos definidos';
 });
+
+
+Route::get('/produto/{id}',function($id){
+    return "O id do produto é: {$id}";
+});
