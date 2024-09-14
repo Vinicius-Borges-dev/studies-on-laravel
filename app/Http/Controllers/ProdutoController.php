@@ -10,7 +10,7 @@ class ProdutoController extends Controller
         return 'index';
     }
 
-    public function show($id){
+    public function show($id = ''){
         return "Show: {$id}";
     }
 }
