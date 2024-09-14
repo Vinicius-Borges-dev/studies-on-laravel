@@ -26,6 +26,4 @@ Route::get('/produto/{id}/{categoria?}',function($id, $categoria = ''){
 });
 
 
-Route::get('/sobre', function(){
-    return redirect('/empresa');
-});
+Route::redirect('/sobre', 'empresa');
