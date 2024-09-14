@@ -6,16 +6,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
+Route::name('admin.')->group(function () {
+    Route::get('admin/dashboard', function () {
         return 'dashboard';
-    });
+    })->name('dashboard');
 
-    Route::get('/users', function () {
+    Route::get('admin/users', function () {
         return 'user';
-    });
+    })->name('users');
 
-    Route::get('/clientes', function () {
+    Route::get('admin/clientes', function () {
         return 'clientes';
-    });
+    })->name('clientes');
 });
