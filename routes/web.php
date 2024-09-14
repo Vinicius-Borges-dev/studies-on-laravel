@@ -1,25 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdutoController;
 
-Route::get('/', function () {
-    return redirect()->route('admin.clientes');
-});
+Route::get('/', [ProdutoController::class, 'index'] );
 
-Route::group([
-    'prefix'=> 'admin',
-    'as' => 'admin.'
-], function(){
-
-    Route::get('dashboard', function () {
-        return 'dashboard';
-    })->name('dashboard');
-
-    Route::get('users', function () {
-        return 'user';
-    })->name('users');
-
-    Route::get('clientes', function () {
-        return 'clientes';
-    })->name('clientes');
-});
+Route::get('/produto/{id}', [ProdutoController::class, 'show']);
