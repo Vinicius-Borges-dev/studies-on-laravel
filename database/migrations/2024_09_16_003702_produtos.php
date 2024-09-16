@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->text('descricao');
-            $table->bouble('preco', 10, 2);
+            $table->double('preco', 10, 2);
             $table->string('slug');
             $table->string('imagem')->nullable();
             $table->unsignedBigInteger('id_user');
