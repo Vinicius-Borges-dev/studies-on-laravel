@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
+use Illuminate\Database\DBAL\TimestampType;
 
 return [
 
@@ -15,6 +16,7 @@ return [
     | is explicitly specified when you execute a query / statement.
     |
     */
+    
 
     'default' => env('DB_CONNECTION', 'sqlite'),
 
@@ -168,6 +170,12 @@ return [
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
 
+    ],
+
+    'dbal' => [
+        'types' => [
+            'timestamp' => TimestampType::class,
+        ],
     ],
 
 ];
